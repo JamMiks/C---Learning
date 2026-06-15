@@ -1,40 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.SqlTypes;
-using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
+using System.Collections.Concurrent;
 using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace учение
+namespace Обучение
 {
     internal class Program
     {
         static void Main(string[] args)
-
         {
-            string answer = "Нет";
-            if(answer == "Да")
+
+            Random random = new Random();
+            int number = random.Next(1, 11);
+            int guess = Convert.ToInt32(Console.ReadLine());
+            if(number == guess)
             {
-                Console.WriteLine("Продолжаем");
+                Console.WriteLine("Угадал");
             }
             else
             {
-                Console.WriteLine("Стоп");
+                Console.WriteLine("Не угадал");
             }
-        } 
-         
 
-
-
-
-
-
+        }
     }
 }
