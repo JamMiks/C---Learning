@@ -8,16 +8,32 @@ namespace Обучение
         static void Main(string[] args)
         {
 
+            Console.WriteLine("Введите число от 1 до 10");
+            bool guessed = false;
             Random random = new Random();
             int number = random.Next(1, 11);
-            int guess = Convert.ToInt32(Console.ReadLine());
-            if(number == guess)
+            for (int i = 1; i <= 3; i++)
             {
-                Console.WriteLine("Угадал");
+                
+                Console.WriteLine("Попытка " + i);
+                int guess = Convert.ToInt32(Console.ReadLine());
+                if (number == guess)
+                {
+                    Console.WriteLine("Угадал");
+                    guessed = true;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Не угадал");
+                    
+                }
+
+               
             }
-            else
+            if (guessed == false)
             {
-                Console.WriteLine("Не угадал");
+                Console.WriteLine("Было загадано число " + number);
             }
 
         }
